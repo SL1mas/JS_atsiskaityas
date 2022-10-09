@@ -8,3 +8,17 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+const KgInput = document.getElementById("search");
+const OtherUnits = document.getElementById("output");
+const kg = Number(KgInput.value);
+
+function OtherUnitsOfMeasure(event) {
+  event.preventDefault();
+  const kg = Number(KgInput.value);
+  const lb = (kg * 2.2046).toFixed(1);
+  const g = (kg / 0.001).toFixed(1);
+  const oz = (kg * 35.274).toFixed(1);
+  console.log(kg);
+  OtherUnits.textContent = `Svoris svarais (lb): ${lb} Svoris gramais (g):${g} Svoris uncijomis (oz):${oz}`;
+}
+document.querySelector("form").addEventListener("submit", OtherUnitsOfMeasure);
