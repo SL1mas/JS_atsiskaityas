@@ -29,7 +29,8 @@ form {
   flex-wrap: wrap;
 }
 
-#search {
+#search,
+#output {
   width: 65%;
   margin: 0;
   padding: 20px;
@@ -37,7 +38,11 @@ form {
   border: 0;
   font-size: 1.1em;
 }
-
+#output {
+  margin: 50px auto;
+  color: red;
+  text-decoration: underline;
+}
 #submit-btn {
   width: 35%;
   background-color: #f7f7f7;
@@ -59,7 +64,8 @@ form {
   }
 
   #search,
-  #submit-btn {
+  #submit-btn,
+  #output {
     font-size: 2em;
   }
 }

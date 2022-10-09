@@ -19,6 +19,6 @@ function OtherUnitsOfMeasure(event) {
   const g = (kg / 0.001).toFixed(1);
   const oz = (kg * 35.274).toFixed(1);
   console.log(kg);
-  OtherUnits.textContent = `Svoris svarais (lb): ${lb} Svoris gramais (g):${g} Svoris uncijomis (oz):${oz}`;
+  OtherUnits.textContent = `Svoris svarais (lb): ${lb}, svoris gramais (g):${g}, svoris uncijomis (oz):${oz}!`;
 }
 document.querySelector("form").addEventListener("submit", OtherUnitsOfMeasure);
