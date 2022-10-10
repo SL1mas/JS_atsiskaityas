@@ -7,28 +7,25 @@ director: string
 budget: number
 
 Metodas: 
-wasExpensive() - jeigu filmo "budget" yra daugiau nei 100 000 000 mln USD, tada grąžins true, kitu atveju false. 
+wasExpensive() - jeigu filmo "budget" yra daugiau nei 100 mln USD, tada grąžins true, kitu atveju false. 
 ------------------------------------------------------------------------------------------------------ */
-function Movie(title, director, budget) {
-  this.title = title;
-  this.director = director;
-  this.budget = budget;
-  this.wasExpensive = function () {
-    const sum =
-      this.budget > 100000000 ? console.log("True") : console.log("False");
-    return sum;
-  };
+class Movie {
+  constructor(title, director, budget) {
+    this.title = title;
+    this.director = director;
+    this.budget = budget;
+    this.wasExpensive = function () {
+      return this.budget > 100000000
+        ? "Taip, nes biudžetas neviršijo 100 mln USD."
+        : "Ne, nes biudžetas nepasiekė 100 mln USD.";
+    };
+  }
 }
 
-const dataInput = new Movie("Vienas namuose", "Kažkas", 1000000000);
-console.log(dataInput.wasExpensive());
-// const a = dataInput.number1;
-// const b = dataInput.number2;
-// const ats1 = dataInput.sumOfNo1AndNo2();
-// const ats2 = dataInput.subOfNo1AndNo2();
-// const ats3 = dataInput.multiOfNo1AndNo2();
-// const ats4 = dataInput.diviOfNo1AndNo2();
-// console.log(`Suma (${a}, ${b}): ${ats1}`);
-// console.log(`Atimtis (${a}, ${b}): ${ats2}`);
-// console.log(`Daugyba (${a}, ${b}): ${ats3}`);
-// console.log(`Dalyba (${a}, ${b}): ${ats4}`);
+const dataInput = new Movie("Vienas namuose", "Kažkas", 100000000);
+console.log(
+  "Filmo pavadinimas: " + dataInput.title + ".",
+  "Filmo režisierius: " + dataInput.director + ".",
+  "Filmo biudžetas: " + dataInput.budget + " USD. Ar filmas buvo brangus?",
+  dataInput.wasExpensive()
+);
