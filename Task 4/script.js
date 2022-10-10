@@ -11,13 +11,14 @@ turėti bent minimalų stilių ir būti responsive;
 const showAuto = (auto) => {
   const output = document.getElementById("output");
   auto.forEach((auto) => {
-    const brand = document.createElement("td");
+    const brand = document.createElement("span");
     brand.innerText = auto.brand;
-    const models = document.createElement("td");
+    const models = document.createElement("p");
     models.innerText = auto.models;
-    const tr = document.createElement("tr");
-    tr.append(brand, models);
-    output.append(tr);
+    const div = document.createElement("div");
+    div.append(brand, models);
+    output.append(div);
+    div.classList.add("brand");
   });
 };
 
@@ -34,5 +35,3 @@ const fetchAuto = async () => {
 };
 
 fetchAuto();
-
-// const ENDPOINT = 'cars.json';
