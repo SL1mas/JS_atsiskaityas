@@ -40,8 +40,12 @@ form {
 }
 #output {
   margin: 50px auto;
-  color: red;
+  color: blue;
   text-decoration: underline;
+  font-weight: bold;
+  background-color: #f7f7f7;
+  border-radius: 2em;
+  text-align: center;
 }
 #submit-btn {
   width: 35%;
